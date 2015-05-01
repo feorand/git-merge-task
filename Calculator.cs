@@ -20,7 +20,8 @@ namespace Kontur.Courses.Git
 				// + 1
 				//>5
                 var v1 = TryParseDouble(args[1]);
-			    return lastResult = Execute(args[0], lastResult.Value, v1);
+                if (!v1.HasValue) return v1;
+			    return lastResult = Execute(args[0], lastResult.Value, v1.Value);
 			}
 			if (args.Length == 3)
 			{
